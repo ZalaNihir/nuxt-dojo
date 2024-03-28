@@ -1,9 +1,6 @@
 <template>
     <div class="container">
-        <NuxtLink to="/products" class="bg-blue-400 float-end p-3 text-white ">Back</NuxtLink>
-        <h3>{{ product.title }}</h3>
-        <p>{{ product.id }}</p>
-        <p>{{ product.price }}</p>
+        <ProductDetail :product="product" />
     </div>
 </template>
 
