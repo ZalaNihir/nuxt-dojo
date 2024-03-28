@@ -1,12 +1,15 @@
 <template>
     <div>
-        <h1>Product Id Page</h1>
+        <h1>Product {{ id }} Page</h1>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, optio sed? Temporibus dolore dignissimos corporis magnam non adipisci exercitationem deleniti ratione facere odit, minus mollitia nesciunt praesentium assumenda est a.</p>
     </div>
 </template>
 
-<script setup lang="ts">
-
+<script setup>
+const { id } = useRoute().params
+definePageMeta({
+  layout: 'products',
+});
 </script>
 
 <style scoped>
