@@ -1,5 +1,6 @@
 <template>
     <div class="card">
+        <NuxtLink to="/products" class="float-end bg-sky-400 text-white p-2 rounded :hover:bg-grey">Back</NuxtLink>
         <div class="grid grid-cols-2 gap-10">
             <div class="p-7">
                 <img :src="product.image" alt="Product Image" class="mx-auto my-7">
@@ -21,6 +22,6 @@ const { product } = defineProps(['product'])
 <style scoped>
 img{
     max-width: 400px;
-    max-height: 500px;
+    max-height: 300px;
 }
 </style>
