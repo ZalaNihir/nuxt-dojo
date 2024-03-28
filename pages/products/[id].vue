@@ -1,23 +1,23 @@
 <template>
-    <div>
-        <h1>Product {{ id }} Page</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, optio sed? Temporibus dolore dignissimos corporis magnam non adipisci exercitationem deleniti ratione facere odit, minus mollitia nesciunt praesentium assumenda est a.</p>
+    <div class="container">
+        <NuxtLink to="/products" class="bg-blue-400 float-end p-3 text-white ">Back</NuxtLink>
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.id }}</p>
+        <p>{{ product.price }}</p>
     </div>
 </template>
 
 <script setup>
 const { id } = useRoute().params
+const uri = 'https://fakestoreapi.com/products/' + id
+
+// fetch data
+
+const { data:product } = await useFetch(uri)
 definePageMeta({
   layout: 'products',
 });
 </script>
 
 <style scoped>
-h2{
-    margin-bottom: 30px;
-    font-size: 36px;
-}
-p{
-    margin: 20px 0;
-}
 </style>

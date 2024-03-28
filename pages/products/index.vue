@@ -1,19 +1,20 @@
 <template>
   <div>
-    <h1>Product Index Page</h1>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae,
-      optio sed? Temporibus dolore dignissimos corporis magnam non adipisci
-      exercitationem deleniti ratione facere odit, minus mollitia nesciunt
-      praesentium assumenda est a.
-    </p>
+    <h1 class="py-3 text-center font-bold">Product Page</h1>
+    <hr class="border-2 mt-2 mb-2">
+    <div class="grid grid-cols-4 gap-5">
+      <div v-for="product in products">
+          <NuxtLink :to="`/products/${product.id}`">{{ product.title }}</NuxtLink>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 definePageMeta({
-  layout: 'products',
+  layout: "products",
 });
+const { data: products } = await useFetch("https://fakestoreapi.com/products");
 </script>
 
 <style scoped>
